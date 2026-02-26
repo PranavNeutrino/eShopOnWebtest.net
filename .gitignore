@@ -6,9 +6,11 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+.spectra_cache
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+tests/UnitTests/
+
 
 # Build results
 [Dd]ebug/

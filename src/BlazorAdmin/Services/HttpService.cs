@@ -3,19 +3,20 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using BlazorShared;
+using BlazorShared.Interfaces;
 using BlazorShared.Models;
 using Microsoft.Extensions.Options;
 
 namespace BlazorAdmin.Services;
 
-public class HttpService
+public class HttpService : IHttpService
 {
     private readonly HttpClient _httpClient;
-    private readonly ToastService _toastService;
+    private readonly IToastService _toastService;
     private readonly string _apiUrl;
 
 
-    public HttpService(HttpClient httpClient, IOptions<BaseUrlConfiguration> baseUrlConfiguration, ToastService toastService)
+    public HttpService(HttpClient httpClient, IOptions<BaseUrlConfiguration> baseUrlConfiguration, IToastService toastService)
     {
         _httpClient = httpClient;
         _toastService = toastService;

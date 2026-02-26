@@ -12,12 +12,12 @@ public class CatalogItemService : ICatalogItemService
 {
     private readonly ICatalogLookupDataService<CatalogBrand> _brandService;
     private readonly ICatalogLookupDataService<CatalogType> _typeService;
-    private readonly HttpService _httpService;
+    private readonly IHttpService _httpService;
     private readonly ILogger<CatalogItemService> _logger;
 
     public CatalogItemService(ICatalogLookupDataService<CatalogBrand> brandService,
         ICatalogLookupDataService<CatalogType> typeService,
-        HttpService httpService,
+        IHttpService httpService,
         ILogger<CatalogItemService> logger)
     {
         _brandService = brandService;

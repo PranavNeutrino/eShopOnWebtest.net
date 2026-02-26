@@ -1,5 +1,6 @@
 ﻿using System;
 using BlazorAdmin.Services;
+using BlazorShared.Models;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorAdmin.Helpers;
