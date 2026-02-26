@@ -5,6 +5,7 @@ using BlazorAdmin;
 using BlazorAdmin.Services;
 using Blazored.LocalStorage;
 using BlazorShared;
+using BlazorShared.Interfaces;
 using BlazorShared.Models;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
@@ -23,6 +24,7 @@ builder.Services.Configure<BaseUrlConfiguration>(configSection);
 builder.Services.AddScoped(sp => new HttpClient() { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
 builder.Services.AddScoped<ToastService>();
+builder.Services.AddScoped<IToastService>(sp => sp.GetRequiredService<ToastService>());
 builder.Services.AddScoped<HttpService>();
 
 builder.Services.AddBlazoredLocalStorage();

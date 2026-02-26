@@ -11,12 +11,13 @@ namespace BlazorAdmin.Services;
 
 public class CachedCatalogItemServiceDecorator : ICatalogItemService
 {
+
     private readonly ILocalStorageService _localStorageService;
-    private readonly CatalogItemService _catalogItemService;
+    private readonly ICatalogItemService _catalogItemService;
     private ILogger<CachedCatalogItemServiceDecorator> _logger;
 
     public CachedCatalogItemServiceDecorator(ILocalStorageService localStorageService,
-        CatalogItemService catalogItemService,
+        ICatalogItemService catalogItemService,
         ILogger<CachedCatalogItemServiceDecorator> logger)
     {
         _localStorageService = localStorageService;

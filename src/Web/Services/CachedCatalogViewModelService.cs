@@ -9,11 +9,12 @@ namespace Microsoft.eShopWeb.Web.Services;
 
 public class CachedCatalogViewModelService : ICatalogViewModelService
 {
+
     private readonly IMemoryCache _cache;
-    private readonly CatalogViewModelService _catalogViewModelService;
+    private readonly ICatalogViewModelService _catalogViewModelService;
 
     public CachedCatalogViewModelService(IMemoryCache cache,
-        CatalogViewModelService catalogViewModelService)
+        ICatalogViewModelService catalogViewModelService)
     {
         _cache = cache;
         _catalogViewModelService = catalogViewModelService;

@@ -14,11 +14,11 @@ public class CachedCatalogLookupDataServiceDecorator<TLookupData, TReponse>
     where TReponse : ILookupDataResponse<TLookupData>
 {
     private readonly ILocalStorageService _localStorageService;
-    private readonly CatalogLookupDataService<TLookupData, TReponse> _catalogTypeService;
+    private readonly ICatalogLookupDataService<TLookupData> _catalogTypeService;
     private ILogger<CachedCatalogLookupDataServiceDecorator<TLookupData, TReponse>> _logger;
 
     public CachedCatalogLookupDataServiceDecorator(ILocalStorageService localStorageService,
-        CatalogLookupDataService<TLookupData, TReponse> catalogTypeService,
+        ICatalogLookupDataService<TLookupData> catalogTypeService,
         ILogger<CachedCatalogLookupDataServiceDecorator<TLookupData, TReponse>> logger)
     {
         _localStorageService = localStorageService;

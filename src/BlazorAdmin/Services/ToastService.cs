@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Timers;
 
+using BlazorShared.Interfaces;
+using BlazorShared.Models;
+
 namespace BlazorAdmin.Services;
 
-public enum ToastLevel
-{
-    Info,
-    Success,
-    Warning,
-    Error
-}
 
-public class ToastService : IDisposable
+public class ToastService : IToastService, IDisposable
 {
     public event Action<string, ToastLevel> OnShow;
     public event Action OnHide;
